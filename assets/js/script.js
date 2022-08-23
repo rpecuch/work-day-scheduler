@@ -1,5 +1,8 @@
 //understand moment.js
 
+currentDayEl = $('#currentDay');
+currentDayEl.text(moment().format('ll'));
+
 //turn middle boxes grey if time is passed by setting class to past
 
 //turn middle box red if current hour by setting class to present
