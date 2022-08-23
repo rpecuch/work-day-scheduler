@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- already linked to Bootstrap, font awesome, google fonts, and css sheet -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +19,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -28,11 +29,105 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
+
+    <!-- resize textareas -->
+    <!-- each save button needs to have an i element -->
     <div class="container">
-      <!-- Timeblocks go here -->
+        <!-- row 1 9-10am -->
+        <div class="row">
+            <div class="col-2 hour"> </div>
+            <div class="col-8">
+                <textarea name="" id="" cols="8" rows="2"></textarea>
+            </div>
+            <div class="col-2">
+                <button class="saveBtn"></button>
+            </div>
+        </div>
+        <!-- row 2 10-11am -->
+        <div class="row">
+            <div class="col-2 hour"> </div>
+            <div class="col-8">
+                <textarea name="" id="" cols="8" rows="2"></textarea>
+            </div>
+            <div class="col">
+                <button class="saveBtn"></button>
+            </div>
+        </div>
+        <!-- row 3 11-12 -->
+        <div class="row">
+            <div class="col-2 hour"> </div>
+            <div class="col-8">
+                <textarea name="" id="" cols="8" rows="2"></textarea>
+            </div>
+            <div class="col-2">
+                <button class="saveBtn"></button>
+            </div>
+        </div>
+        <!-- row 4 12-1pm -->
+        <div class="row">
+            <div class="col-2 hour"> </div>
+            <div class="col-8">
+                <textarea name="" id="" cols="8" rows="2"></textarea>
+            </div>
+            <div class="col-2">
+                <button class="saveBtn"></button>
+            </div>
+        </div>
+        <!-- row 5 1-2pm -->
+        <div class="row">
+            <div class="col-2 hour"> </div>
+            <div class="col-8">
+                <textarea name="" id="" cols="8" rows="2"></textarea>
+            </div>
+            <div class="col-2">
+                <button class="saveBtn"></button>
+            </div>
+        </div>
+        <!-- row 6 2-3pm -->
+        <div class="row">
+            <div class="col-2 hour"> </div>
+            <div class="col-8">
+                <textarea name="" id="" cols="8" rows="2"></textarea>
+            </div>
+            <div class="col-2">
+                <button class="saveBtn"></button>
+            </div>
+        </div>
+        <!-- row 7 3-4pm -->
+        <div class="row">
+            <div class="col-2 hour"> </div>
+            <div class="col-8">
+                <textarea name="" id="" cols="8" rows="2"></textarea>
+            </div>
+            <div class="col-2">
+                <button class="saveBtn"></button>
+            </div>
+        </div>
+        <!-- row 8 4-5pm -->
+        <div class="row">
+            <div class="col-2 hour"> </div>
+            <div class="col-8">
+                <textarea name="" id="" cols="8" rows="2"></textarea>
+            </div>
+            <div class="col-2">
+                <button class="saveBtn"></button>
+            </div>
+        </div>
+        <!-- row 9 5-6pm -->
+        <div class="row">
+            <div class="col-2 hour"> </div>
+            <div class="col-8">
+                <textarea name="" id="" cols="8" rows="2"></textarea>
+            </div>
+            <div class="col-2">
+                <button class="saveBtn"></button>
+            </div>
+        </div>
     </div>
 
+    <!-- already linked to jquery core and moment -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>

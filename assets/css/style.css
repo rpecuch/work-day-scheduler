@@ -21,10 +21,12 @@ body {
     border-bottom: 10px solid black;
   }
   
+  /* figure out what this is for */
   .description{
     white-space: pre-wrap;
   }
   
+  /* figure what this is for*/
   .time-block{
     text-align: center;
     border-radius: 15px;
