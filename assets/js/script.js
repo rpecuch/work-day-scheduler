@@ -9,3 +9,9 @@
 //allow user to create an event by clicking on a textarea
 
 //event saves to local storage when the save button is pressed
+
+saveBtnEl = $('.saveBtn');
+//event listener works on all buttons
+saveBtnEl.on("click", function() {
+    console.log("save");
+})
