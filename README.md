@@ -18,7 +18,7 @@ Provide instructions and examples for use. Include screenshots as needed.
 
 ## Credits
 
-This project was based on the starter code from the super-disco repository belonging to the GitHub user @coding-boot-camp.
+This project was based on the starter code from the super-disco repository belonging to the GitHub user @coding-boot-camp. The following third-party APIs were utilized: jQuery, Bootstrap, Moment.js, Google Fonts, and Font Awesome.
 
 ## License
 
