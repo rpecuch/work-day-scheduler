@@ -1,10 +1,11 @@
-//assigned class to all text area elements
+//assigned class to all text area elements to match with css styling
 var textAreaEls = $('textarea');
 for(var i=0; i<textAreaEls.length; i++) {
     textAreaEls[i].setAttribute("class", "description");
 }
 
 //set current date to always display at the top
+//will change format
 var currentDayEl = $('#currentDay');
 currentDayEl.text(moment().format('MM Do, YYYY'));
 
@@ -12,8 +13,8 @@ currentDayEl.text(moment().format('MM Do, YYYY'));
 var currentTime = moment();
 
 //assigns times to all time blocks
+//probably should use a different format
 var times = $('.hour');
-console.log(times);
 var num = 9;
 for(i=0;i<times.length;i++) {
     times[i].textContent = moment().hour(num).format("h");
