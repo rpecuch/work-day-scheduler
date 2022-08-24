@@ -6,35 +6,35 @@ for(var i=0; i<textAreaEls.length; i++) {
 
 //set current date to always display at the top
 var currentDayEl = $('#currentDay');
-currentDayEl.text(moment().format('ll'));
+currentDayEl.text(moment().format('MM Do, YYYY'));
 
-//colors time blocks based on if they are past, present, or future
+
 var currentTime = moment();
-var timeBlocks = [
-    moment().hour(9),
-    moment().hour(10),
-    moment().hour(11),
-    moment().hour(12),
-    moment().hour(13),
-    moment().hour(14),
-    moment().hour(15),
-    moment().hour(16),
-    moment().hour(17),
-]
 
-//need finish this function
-for(var i=0; i<timeBlocks.length; i++) {
-    if (currentTime.isBefore(timeBlocks[i])) {
-        console.log("before");
-        //assign rows to class future
+//assigns times to all time blocks
+var times = $('.hour');
+console.log(times);
+var num = 9;
+for(i=0;i<times.length;i++) {
+    times[i].textContent = moment().hour(num).format("h");
+    num++;
+}
+
+//styles time blocks based on relation to current time
+//need to make these variables better names
+
+for(i=0; i<times.length; i++) {
+    if (currentTime > times[i].textContent) {
+        var targetEl = $(times[i]).parent().children().eq(1);
+        targetEl.addClass("past");
     }
-    else if(timeBlocks[i].isBefore(currentTime)) {
-        console.log("after");
-        //assign rows to class past
+    else if(currentTime < times[i].textContent) {
+        var targetEl = $(times[i]).parent().children().eq(1);
+        targetEl.addClass("future");
     }
     else {
-        console.log("during");
-        //assign row to class present
+        var targetEl = $(times[i]).parent().children().eq(1);
+        targetEl.addClass("present");
     }
 }
 
