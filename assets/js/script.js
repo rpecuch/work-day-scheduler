@@ -46,12 +46,27 @@ for(var i=0; i<saveBtnEl.length; i++) {
     saveBtnEl[i].appendChild(icon);
 }
 
-//event saves to local storage when the save button is pressed
-//so far only writing this for top row need to apply to all rows
-input = document.querySelector("#nine");
+//need to make these var names easier to understand
+//saves event to local storage when user enters an event in any of the text boxes
+function saveEvent(event) {
+    event.preventDefault();
+    //retrieve input from text area
+    //retrieving input from the 1st child of the 2nd child of the target's grandparent
+    var grandParent = $(event.target).parent().parent();
+    var secondChild = grandParent.children().eq(1);
+    var firstChild = secondChild.children().eq(0);
+    var input = firstChild.val();
+    //save to local storage
+    //key needs to be time
+    //time is the text content of the first child of the target's grandparent
+    var firstKid = grandParent.children().eq(0);
+    var time = firstKid.text();
+    console.log(time);
+    localStorage.setItem(time, input);
+}
 
-saveBtnEl.on("click", function() {
-    console.log("save");
-    console.log(input.value);
-    localStorage.setItem("nine", input.value);
-})
+//listens for click on any button
+var containerEl = $('.container');
+containerEl.on('click', '.saveBtn', saveEvent);
+
+//need to retrieve from local storage when page loads
