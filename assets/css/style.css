@@ -3,6 +3,10 @@ body {
     font-size: 16px;
     line-height: 1;
   }
+
+  #appt-message {
+    text-align: center;
+  }
   
   textarea{
     background: transparent;
@@ -33,7 +37,6 @@ body {
     white-space: pre-wrap;
   }
   
-  /* this might be for middle columns not rows */
   .time-block{
     text-align: center;
     border-radius: 15px;
@@ -72,16 +75,11 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #06AED5;
     color: white;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
   }
   
   .saveBtn i:hover {
     font-size: 20px;
     transition: all .3s ease-in-out;
+    color: black;
+    cursor: pointer;
   }

@@ -2,9 +2,7 @@
 
 ## Description
 
-The purpose of this application is to allow users to create and save events that will be occurring during the workday into a calendar. This provides a visual representation of the work day and helps workers quickly find open time blocks for additional events.
-
-- What did you learn?
+The purpose of this application is to allow users to create and save events that will be occurring during the workday into a calendar. This provides a visual representation of the work day and helps workers quickly find open time blocks for additional events. While building this application, I became comfortable with incorporating jQuery syntax, Bootstrap class naming conventions, and Moment.js methods into web applications.
 
 ## Installation
 
@@ -12,7 +10,7 @@ N/A
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+To access this application, visit the following URL: (https://rpecuch.github.io/work-day-scheduler/) [https://rpecuch.github.io/work-day-scheduler/].
 
 ![alt text](assets/images/screenshot.png)
 

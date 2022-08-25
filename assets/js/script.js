@@ -1,10 +1,10 @@
-//assigned class to all text area elements to match with css styling
+//assigns class to all text area elements to match with css styling
 var textAreaEls = $('textarea');
 for(var i=0; i<textAreaEls.length; i++) {
     textAreaEls[i].setAttribute("class", "description");
 }
 
-//set current date to always display at the top
+//sets current date to always display at the top
 var currentDayEl = $('#currentDay');
 currentDayEl.text(moment().format('dddd, MMMM Do'));
 
@@ -18,6 +18,7 @@ for(i=0;i<timeBlocks.length;i++) {
 }
 
 //styles time blocks based on relation to current time
+//target element to be styled is the sibling of the element in the timeblocks array
 var currentTime = parseInt(moment().hours());
 
 for(i=0; i<timeBlocks.length; i++) {
@@ -27,17 +28,15 @@ for(i=0; i<timeBlocks.length; i++) {
     }
     else if(currentTime < timeBlocks[i].value) {
         var targetEl = $(timeBlocks[i]).parent().children().eq(1);
-        targetEl.removeClass("past");
         targetEl.addClass("future");
     }
     else {
         var targetEl = $(timeBlocks[i]).parent().children().eq(1);
         targetEl.addClass("present");
-        targetEl.text("Current hour");
     }
 }
 
-//added icon to all save buttons
+//added icon to each row to act as save buttons
 var saveBtnEl = $('.saveBtn');
 for(var i=0; i<saveBtnEl.length; i++) {
     var icon = document.createElement("i");
@@ -45,8 +44,8 @@ for(var i=0; i<saveBtnEl.length; i++) {
     saveBtnEl[i].appendChild(icon);
 }
 
-//need to make these var names easier to understand
 //saves event to local storage when user enters an event in any of the text boxes
+//uses DOM traversal to navigate from the event target (icon) to the input and time values needed to put in storage
 function saveEvent(event) {
     event.preventDefault();
     var grandParent = $(event.target).parent().parent();
@@ -59,8 +58,7 @@ function saveEvent(event) {
     localStorage.setItem(time, input);
 }
 
-//listens for click on any button
-//maybe extend so listener on the icons too
+//listens for click on any icon
 var containerEl = $('.container');
 containerEl.on('click', '.saveBtn', saveEvent);
 
