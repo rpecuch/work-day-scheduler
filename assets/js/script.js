@@ -15,7 +15,6 @@ for(i=0;i<timeBlocks.length;i++) {
     timeBlocks[i].value = moment().hour(num).format("h");
     timeBlocks[i].textContent = moment().hour(num).format("h A");
     num++;
-    console.log(timeBlocks[i].value);
 }
 
 //styles time blocks based on relation to current time
@@ -60,6 +59,7 @@ function saveEvent(event) {
 }
 
 //listens for click on any button
+//maybe extend so listener on the icons too
 var containerEl = $('.container');
 containerEl.on('click', '.saveBtn', saveEvent);
 
