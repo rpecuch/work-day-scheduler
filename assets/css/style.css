@@ -33,6 +33,7 @@ body {
     white-space: pre-wrap;
   }
   
+  /* this might be for middle columns not rows */
   .time-block{
     text-align: center;
     border-radius: 15px;

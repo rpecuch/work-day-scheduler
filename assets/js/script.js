@@ -12,14 +12,13 @@ currentDayEl.text(moment().format('dddd, MMMM Do'));
 var timeBlocks = $('.hour');
 var num = 9;
 for(i=0;i<timeBlocks.length;i++) {
-    timeBlocks[i].value = moment().hour(num).format("h");
+    timeBlocks[i].value = num;
     timeBlocks[i].textContent = moment().hour(num).format("h A");
     num++;
 }
 
 //styles time blocks based on relation to current time
-//this is not working
-var currentTime = moment();
+var currentTime = parseInt(moment().hours());
 
 for(i=0; i<timeBlocks.length; i++) {
     if (currentTime > timeBlocks[i].value) {
@@ -28,8 +27,8 @@ for(i=0; i<timeBlocks.length; i++) {
     }
     else if(currentTime < timeBlocks[i].value) {
         var targetEl = $(timeBlocks[i]).parent().children().eq(1);
+        targetEl.removeClass("past");
         targetEl.addClass("future");
-        console.log("future");
     }
     else {
         var targetEl = $(timeBlocks[i]).parent().children().eq(1);
@@ -54,12 +53,9 @@ function saveEvent(event) {
     var secondChild = grandParent.children().eq(1);
     var firstChild = secondChild.children().eq(0);
     var input = firstChild.val().trim();
-    var firstKid = grandParent.children().eq(0);
     var time = grandParent.attr("id");
     console.log(time);
-    //change this so it says am/pm
     $("#appt-message").text("Event saved: " + input + " at " + time);
-    //save to local storage
     localStorage.setItem(time, input);
 }
 
@@ -68,11 +64,27 @@ function saveEvent(event) {
 var containerEl = $('.container');
 containerEl.on('click', '.saveBtn', saveEvent);
 
-//need to retrieve from local storage when page loads
-//this is displaying key not value
-function loadEvent() {
-    var hour9 = localStorage.getItem("9");
-    $('#9 .description').val(9);
+//retrieves events saved to local storage
+function loadEvents() {
+    var hour9 = localStorage.getItem("9AM");
+    $('#9AM .description').val(hour9);
+    var hour10 = localStorage.getItem("10AM");
+    $('#10AM .description').val(hour10);
+    var hour11 = localStorage.getItem("11AM");
+    $('#11AM .description').val(hour11);
+    var hour12 = localStorage.getItem("12PM");
+    $('#12PM .description').val(hour12);
+    var hour1 = localStorage.getItem("1PM");
+    $('#1PM .description').val(hour1);
+    var hour2 = localStorage.getItem("2PM");
+    $('#2PM .description').val(hour2);
+    var hour3 = localStorage.getItem("3PM");
+    $('#3PM .description').val(hour3);
+    var hour4 = localStorage.getItem("4PM");
+    $('#4PM .description').val(hour4);
+    var hour5 = localStorage.getItem("5PM");
+    $('#5PM .description').val(hour5);
 }
 
-loadEvent();
+//called when page loads
+loadEvents();
