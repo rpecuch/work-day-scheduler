@@ -18,6 +18,7 @@ for(i=0;i<timeBlocks.length;i++) {
 }
 
 //styles time blocks based on relation to current time
+//this is not working
 var currentTime = moment();
 
 for(i=0; i<timeBlocks.length; i++) {
@@ -28,6 +29,7 @@ for(i=0; i<timeBlocks.length; i++) {
     else if(currentTime < timeBlocks[i].value) {
         var targetEl = $(timeBlocks[i]).parent().children().eq(1);
         targetEl.addClass("future");
+        console.log("future");
     }
     else {
         var targetEl = $(timeBlocks[i]).parent().children().eq(1);
@@ -53,8 +55,11 @@ function saveEvent(event) {
     var firstChild = secondChild.children().eq(0);
     var input = firstChild.val().trim();
     var firstKid = grandParent.children().eq(0);
-    var time = firstKid.text();
+    var time = grandParent.attr("id");
+    console.log(time);
+    //change this so it says am/pm
     $("#appt-message").text("Event saved: " + input + " at " + time);
+    //save to local storage
     localStorage.setItem(time, input);
 }
 
@@ -64,8 +69,10 @@ var containerEl = $('.container');
 containerEl.on('click', '.saveBtn', saveEvent);
 
 //need to retrieve from local storage when page loads
-
+//this is displaying key not value
 function loadEvent() {
+    var hour9 = localStorage.getItem("9");
+    $('#9 .description').val(9);
 }
 
 loadEvent();
