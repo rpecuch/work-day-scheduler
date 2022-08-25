@@ -10,9 +10,17 @@ N/A
 
 ## Usage
 
-To access this application, visit the following URL: (https://rpecuch.github.io/work-day-scheduler/) [https://rpecuch.github.io/work-day-scheduler/].
+To access this application, visit the following URL: [https://rpecuch.github.io/work-day-scheduler/](https://rpecuch.github.io/work-day-scheduler/). The calendar blocks are color-coded based on the time of day: grey represents events that have already occurred, red represents events that are currently happening, and green represents events that are in the future.
 
-![alt text](assets/images/screenshot.png)
+![color-coded calendar](./assets/images/color-code-time.png)
+
+To add an event, click on any colored block, type the name of the event, and click on the icon to add the event.
+
+![saving an event to calendar](./assets/images/saving-event.png)
+
+When the application is refreshed, all saved events will remain on the calendar. 
+
+![saved events on calendar](./assets/images/load-saved-events.png)
 
 ## Credits
 
