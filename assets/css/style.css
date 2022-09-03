@@ -83,3 +83,16 @@ body {
     color: black;
     cursor: pointer;
   }
+
+  #clear-btn {
+    position: relative;
+    left: 45%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+    border-radius: 10px;
+  }
+
+  #clear-btn:hover {
+    background-color: grey;
+  }

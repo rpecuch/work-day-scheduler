@@ -22,6 +22,10 @@ When the application is refreshed, all saved events will remain on the calendar.
 
 ![saved events on calendar](./assets/images/load-saved-events.png)
 
+To clear all events from the calendar, click the button on the bottom of the page.
+
+![button to clear events from calendar](./assets/images/clear-calendar.png)
+
 ## Credits
 
 This project was based on the starter code from the super-disco repository belonging to the GitHub user @coding-boot-camp. The following third-party APIs were utilized: jQuery, Bootstrap, Moment.js, Google Fonts, and Font Awesome.
