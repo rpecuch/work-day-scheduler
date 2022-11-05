@@ -52,11 +52,16 @@ function saveEvent(event) {
     var grandParent = $(event.target).parent().parent();
     var secondChild = grandParent.children().eq(1);
     var firstChild = secondChild.children().eq(0);
+    console.log(secondChild);
     var input = firstChild.val().trim();
     var time = grandParent.attr("id");
-    console.log(time);
     $("#appt-message").text("Event saved: " + input + " at " + time);
     localStorage.setItem(time, input);
+    //add button to cross of event when completed
+    var parent = $(event.target).parent();
+    var doneBtn = document.createElement('button');
+    doneBtn.textContent = 'Done';
+    secondChild.append(doneBtn);
 }
 
 //listens for click on any icon
