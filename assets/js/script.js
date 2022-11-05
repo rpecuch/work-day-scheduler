@@ -52,16 +52,25 @@ function saveEvent(event) {
     var grandParent = $(event.target).parent().parent();
     var secondChild = grandParent.children().eq(1);
     var firstChild = secondChild.children().eq(0);
-    console.log(secondChild);
     var input = firstChild.val().trim();
     var time = grandParent.attr("id");
     $("#appt-message").text("Event saved: " + input + " at " + time);
     localStorage.setItem(time, input);
-    //add button to cross of event when completed
-    var parent = $(event.target).parent();
+    //add "Done" button
     var doneBtn = document.createElement('button');
     doneBtn.textContent = 'Done';
+    //style "Done button"
+    doneBtn.style.background = 'white';
+    doneBtn.style.padding = '1%';
+    doneBtn.style.borderRadius = '10px';
+    doneBtn.style.marginLeft = '10%';
     secondChild.append(doneBtn);
+    //remove event from local storage when completed
+    doneBtn.addEventListener('click', function() {
+        console.log(time);
+        localStorage.removeItem(time);
+        location.reload();
+    })
 }
 
 //listens for click on any icon
