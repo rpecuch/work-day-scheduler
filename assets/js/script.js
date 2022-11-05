@@ -9,13 +9,27 @@ for(var i=0; i<textAreaEls.length; i++) {
 var currentDayEl = $('#currentDay');
 currentDayEl.text(moment().format('dddd, MMMM Do'));
 
-//assigns text content and time value to each time block
+//removes single event from local storage
+function removeEvent(e) {
+    localStorage.removeItem(e.target.parentElement.parentElement.id);
+    location.reload();
+}
+
+//assigns text content and time value to each time block, also adds button to remove single event
 var timeBlocks = $('.hour');
 var num = 9;
 for(i=0;i<timeBlocks.length;i++) {
     timeBlocks[i].value = num;
     timeBlocks[i].textContent = moment().hour(num).format("h A");
     num++;
+    //add "Done" button
+    var doneBtn = document.createElement('button');
+    doneBtn.textContent = 'Done';
+    //style "Done button"
+    doneBtn.setAttribute('class', 'done-btn');
+    timeBlocks[i].append(doneBtn);
+    //call fxn to remove event from local storage
+    doneBtn.addEventListener('click', removeEvent)
 }
 
 //styles time blocks based on relation to current time
@@ -56,21 +70,6 @@ function saveEvent(event) {
     var time = grandParent.attr("id");
     $("#appt-message").text("Event saved: " + input + " at " + time);
     localStorage.setItem(time, input);
-    //add "Done" button
-    var doneBtn = document.createElement('button');
-    doneBtn.textContent = 'Done';
-    //style "Done button"
-    doneBtn.style.background = 'white';
-    doneBtn.style.padding = '1%';
-    doneBtn.style.borderRadius = '10px';
-    doneBtn.style.marginLeft = '10%';
-    secondChild.append(doneBtn);
-    //remove event from local storage when completed
-    doneBtn.addEventListener('click', function() {
-        console.log(time);
-        localStorage.removeItem(time);
-        location.reload();
-    })
 }
 
 //listens for click on any icon
