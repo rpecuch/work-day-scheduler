@@ -1,5 +1,13 @@
 # Work Day Scheduler
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
+
 ## Description
 
 The purpose of this application is to allow users to create and save events that will be occurring during the workday into a calendar. This provides a visual representation of the work day and helps workers quickly find open time blocks for additional events. While building this application, I became comfortable with incorporating jQuery syntax, Bootstrap class naming conventions, and Moment.js methods into web applications.
