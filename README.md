@@ -10,7 +10,17 @@
 
 ## Description
 
-The purpose of this application is to allow users to create and save events that will be occurring during the workday into a calendar. This provides a visual representation of the work day and helps workers quickly find open time blocks for additional events. While building this application, I became comfortable with incorporating jQuery syntax, Bootstrap class naming conventions, and Moment.js methods into web applications.
+The purpose of this application is to allow users to create and save events that will be occurring during the workday. This provides a visual representation of the day ahead and helps workers quickly find open time blocks for additional events. While building this application, I became comfortable with incorporating jQuery syntax, Bootstrap class naming conventions, and Moment.js methods into web applications.
+
+## Table of Contents
+
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
 
 ## Installation
 
@@ -41,3 +51,15 @@ This project was based on the starter code from the super-disco repository belon
 ## License
 
 Please refer to the license in the repo.
+
+## Contributing
+
+  Ways to contribute include suggesting bug fixes.
+  
+  ## Tests
+
+  N/A
+
+  ## Questions
+
+  If you have any questions or would like to provide feedback, do not hesitate to view my GitHub profile at [https://github.com/rpecuch](https://github.com/rpecuch) or contact me at rpecuch@comcast.net.
