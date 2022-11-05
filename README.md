@@ -40,7 +40,7 @@ When the application is refreshed, all saved events will remain on the calendar.
 
 ![saved events on calendar](./assets/images/load-saved-events.png)
 
-To clear all events from the calendar, click the button on the bottom of the page.
+To clear all events from the calendar, click the button on the bottom of the page. To clear a single event, click on the button on the corresponding row.
 
 ![button to clear events from calendar](./assets/images/clear-calendar.png)
 
