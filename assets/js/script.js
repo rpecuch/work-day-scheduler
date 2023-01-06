@@ -1,4 +1,3 @@
-//TODO: add button to every row to allow crossing off events individually
 //assigns class to all text area elements to match with css styling
 var textAreaEls = $('textarea');
 for(var i=0; i<textAreaEls.length; i++) {
