@@ -12,6 +12,7 @@ currentDayEl.text(moment().format('dddd, MMMM Do'));
 //removes single event from local storage
 function removeEvent(e) {
     localStorage.removeItem(e.target.parentElement.parentElement.id);
+    //reload page
     location.reload();
 }
 
@@ -32,21 +33,18 @@ for(i=0;i<timeBlocks.length;i++) {
     doneBtn.addEventListener('click', removeEvent)
 }
 
-//styles time blocks based on relation to current time
-//target element to be styled is the sibling of the element in the timeblocks array
+//add classes that style the time blocks based on relation to current time
 var currentTime = parseInt(moment().hours());
-
 for(i=0; i<timeBlocks.length; i++) {
+    //target element to be styled is the sibling of the element in the timeblocks array
+    var targetEl = $(timeBlocks[i]).parent().children().eq(1);
     if (currentTime > timeBlocks[i].value) {
-        var targetEl = $(timeBlocks[i]).parent().children().eq(1);
         targetEl.addClass("past");
     }
     else if(currentTime < timeBlocks[i].value) {
-        var targetEl = $(timeBlocks[i]).parent().children().eq(1);
         targetEl.addClass("future");
     }
     else {
-        var targetEl = $(timeBlocks[i]).parent().children().eq(1);
         targetEl.addClass("present");
     }
 }
@@ -63,12 +61,13 @@ for(var i=0; i<saveBtnEl.length; i++) {
 //uses DOM traversal to navigate from the event target (icon) to the input and time values needed to put in storage
 function saveEvent(event) {
     event.preventDefault();
-    var grandParent = $(event.target).parent().parent();
-    var secondChild = grandParent.children().eq(1);
-    var firstChild = secondChild.children().eq(0);
-    var input = firstChild.val().trim();
-    var time = grandParent.attr("id");
+    var grandParentEl = $(event.target).parent().parent();
+    //input box
+    var input = grandParentEl.children().eq(1).children().eq(0).val().trim();
+    //id of time row
+    var time = grandParentEl.attr("id");
     $("#appt-message").text("Event saved: " + input + " at " + time);
+    //save to local storage
     localStorage.setItem(time, input);
 }
 
@@ -78,7 +77,9 @@ containerEl.on('click', '.saveBtn', saveEvent);
 
 //retrieves events saved to local storage
 function loadEvents() {
+    //retrieve event
     var hour9 = localStorage.getItem("9AM");
+    //display event
     $('#9AM .description').val(hour9);
     var hour10 = localStorage.getItem("10AM");
     $('#10AM .description').val(hour10);
@@ -102,6 +103,7 @@ function loadEvents() {
 loadEvents();
 
 var clearBtnEl = $('#clear-btn');
+//clears all events from local storage and reloads page
 clearBtnEl.on("click", function() {
     localStorage.clear();
     location.reload();
